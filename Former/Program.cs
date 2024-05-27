@@ -32,10 +32,18 @@ Arealet er: {form.calculateArea()}
                 {
                     totalArea += num.calculateArea();
                 }
-                Console.WriteLine($"Totalarealet av alle formene er: {totalArea}");
+                Console.WriteLine($@"Totalarealet av alle formene er: {totalArea}
+");
 
                 var areaList = listByArea();
 
+                Console.WriteLine("Liste basert på areal:");
+                foreach (var area in areaList)
+                {
+                    Console.WriteLine(@$"{area._name}, {area.calculateArea()}");
+                }
+                Console.WriteLine("");
+                Console.WriteLine("Liste basert på farge:");
                 var colorList = listByColor();
                 foreach (var group in colorList)
                 {

@@ -27,22 +27,19 @@
 Fargen er: {form._color} 
 Arealet er: {form.calculateArea()}
 ");
-                double totalArea = 0;
-                foreach (var num in former)
-                {
-                    totalArea += num.calculateArea();
-                }
+            }
+
+            double totalArea = 0;
+                foreach (var num in former) totalArea += num.calculateArea();
                 Console.WriteLine($@"Totalarealet av alle formene er: {totalArea}
 ");
 
                 var areaList = listByArea();
-
                 Console.WriteLine("Liste basert på areal:");
-                foreach (var area in areaList)
-                {
-                    Console.WriteLine(@$"{area._name}, {area.calculateArea()}");
-                }
+                foreach (var area in areaList) Console.WriteLine(@$"{area._name}, {area.calculateArea()}");
+
                 Console.WriteLine("");
+                
                 Console.WriteLine("Liste basert på farge:");
                 var colorList = listByColor();
                 foreach (var group in colorList)
@@ -50,7 +47,7 @@ Arealet er: {form.calculateArea()}
                     Console.WriteLine($"Farge: {group.Key}, Antall: {group.Count()}");
                     foreach (var kek in group) Console.WriteLine($"  Navn: {kek._name}");
                 }
-            }
+            
         }
         private List<Former> listByArea()
         {
